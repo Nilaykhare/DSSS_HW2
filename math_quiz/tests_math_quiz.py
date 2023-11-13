@@ -27,8 +27,8 @@ class TestMathGame(unittest.TestCase):
             ]
 
             for test_case in test_cases:
-                print("###################")
-                print(test_case)
+                #print("###################")
+                #print(test_case)
                 num1, num2, operator, expected_problem, expected_answer = test_case
                 self.assertTrue(operationOutput(num1, num2, operator)[1]==expected_answer)
                 
