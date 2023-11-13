@@ -14,16 +14,23 @@ class TestMathGame(unittest.TestCase):
 
     def test_function_B(self):
         # TODO
-        pass
+        for _ in range(10):
+            operation = randomOperation()
+            self.assertTrue(operation in ['+', '-', '*'])
+        
 
     def test_function_C(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (5, 2, '-', '5 - 2', 3),
+                (5, 2, '*', '5 * 2', 10),
             ]
 
-            for i in test_cases:
-                print(i)
-
+            for test_case in test_cases:
+                print("###################")
+                print(test_case)
+                num1, num2, operator, expected_problem, expected_answer = test_case
+                self.assertTrue(operationOutput(num1, num2, operator)[1]==expected_answer)
+                
 if __name__ == "__main__":
     unittest.main()
